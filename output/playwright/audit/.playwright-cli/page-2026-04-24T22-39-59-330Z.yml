@@ -1,0 +1,93 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "BO7 VOD Analyzer" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]:
+          - generic [ref=e9]: BO7 VOD
+          - generic [ref=e10]: Analyzer
+      - generic [ref=e11]:
+        - link "How It Works" [ref=e12] [cursor=pointer]:
+          - /url: /about
+        - link "Pricing" [ref=e13] [cursor=pointer]:
+          - /url: /pricing
+        - link "Blog" [ref=e14] [cursor=pointer]:
+          - /url: /blog
+        - link "Analyze VOD" [active] [ref=e15] [cursor=pointer]:
+          - /url: /upload
+  - main [ref=e16]:
+    - generic [ref=e321]:
+      - generic [ref=e322]:
+        - generic [ref=e323]:
+          - img [ref=e324]
+          - generic [ref=e327]: Upload & Analyze
+        - heading "Upload Your Gameplay" [level=1] [ref=e328]
+        - paragraph [ref=e329]: Drop your Black Ops 7 VOD below. We'll analyze the full video and run a full competitive analysis on your gameplay.
+      - generic [ref=e330]:
+        - generic [ref=e331]:
+          - img [ref=e332]
+          - generic [ref=e335]: Max 15 minutes
+        - generic [ref=e336]:
+          - img [ref=e337]
+          - generic [ref=e339]: Max 512MB
+        - generic [ref=e340]:
+          - img [ref=e341]
+          - generic [ref=e343]: MP4, MOV, WebM
+      - button "Drop your gameplay video here or click to browse files" [ref=e344] [cursor=pointer]:
+        - generic [ref=e345]:
+          - img [ref=e347]
+          - paragraph [ref=e350]: Drop your gameplay video here
+          - paragraph [ref=e351]: or click to browse files
+      - generic [ref=e352]:
+        - heading "Tips for Best Results" [level=3] [ref=e353]
+        - list [ref=e354]:
+          - listitem [ref=e355]:
+            - img [ref=e356]
+            - text: Upload 1080p or higher resolution footage
+          - listitem [ref=e359]:
+            - img [ref=e360]
+            - text: Make sure the full HUD is visible (minimap, killstreak bar, ammo count)
+          - listitem [ref=e363]:
+            - img [ref=e364]
+            - text: Upload a full game if possible - patterns are more visible over a full match
+          - listitem [ref=e367]:
+            - img [ref=e368]
+            - text: Standard gameplay works best - avoid heavily edited or montage clips
+  - contentinfo [ref=e280]:
+    - generic [ref=e281]:
+      - generic [ref=e282]:
+        - generic [ref=e283]:
+          - generic [ref=e284]:
+            - img [ref=e285]
+            - generic [ref=e287]: BO7 VOD Analyzer
+          - paragraph [ref=e288]: AI-powered competitive Call of Duty coaching. Upload your Black Ops 7 gameplay and get a pro-level VOD review with timestamped feedback, mechanical skill ratings, and personalized improvement plans.
+        - generic [ref=e289]:
+          - heading "Product" [level=4] [ref=e290]
+          - list [ref=e291]:
+            - listitem [ref=e292]:
+              - link "Analyze VOD" [ref=e293] [cursor=pointer]:
+                - /url: /upload
+            - listitem [ref=e294]:
+              - link "Pricing" [ref=e295] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e296]:
+              - link "How It Works" [ref=e297] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e298]:
+              - link "Blog" [ref=e299] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=e300]:
+          - heading "Analysis Covers" [level=4] [ref=e301]
+          - list [ref=e302]:
+            - listitem [ref=e303]: Aim & Centering
+            - listitem [ref=e304]: Movement Mechanics
+            - listitem [ref=e305]: Positioning & Map Awareness
+            - listitem [ref=e306]: Decision-Making
+            - listitem [ref=e307]: Spawn & Rotation Timing
+      - generic [ref=e308]:
+        - paragraph [ref=e309]: © 2026 BO7 VOD Analyzer. Not affiliated with Activision or the CDL.
+        - paragraph [ref=e310]: Powered by AI vision analysis. Results are analytical estimates, not definitive assessments.
+  - button "Open Next.js Dev Tools" [ref=e316] [cursor=pointer]:
+    - img [ref=e317]
+  - alert [ref=e320]: Upload Your Gameplay | BO7 VOD Analyzer

@@ -1,0 +1,249 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "BO7 VOD Analyzer" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]:
+          - generic [ref=e9]: BO7 VOD
+          - generic [ref=e10]: Analyzer
+      - generic [ref=e11]:
+        - link "How It Works" [ref=e12] [cursor=pointer]:
+          - /url: /about
+        - link "Pricing" [ref=e13] [cursor=pointer]:
+          - /url: /pricing
+        - link "Blog" [ref=e14] [cursor=pointer]:
+          - /url: /blog
+        - link "Analyze VOD" [ref=e15] [cursor=pointer]:
+          - /url: /upload
+  - main [ref=e16]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img [ref=e23]
+        - generic [ref=e25]: Black Ops 7 Competitive Coaching Tool
+      - heading "Stop Guessing. Start Improving." [level=1] [ref=e26]
+      - paragraph [ref=e27]: Upload your Black Ops 7 gameplay and get a brutally honest, pro-level VOD review. Exact timestamps. Specific callouts. Real competitive analysis - like having a CDL coach on demand.
+      - generic [ref=e28]:
+        - link "Analyze My Gameplay" [ref=e29] [cursor=pointer]:
+          - /url: /upload
+          - text: Analyze My Gameplay
+          - img [ref=e30]
+        - link "See How It Works" [ref=e32] [cursor=pointer]:
+          - /url: "#how-it-works"
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]: Full
+          - generic [ref=e36]: Video Analyzed
+        - generic [ref=e37]:
+          - generic [ref=e38]: 20+
+          - generic [ref=e39]: Skill Metrics
+        - generic [ref=e40]:
+          - generic [ref=e41]: ~2min
+          - generic [ref=e42]: Minutes to Report
+        - generic [ref=e43]:
+          - generic [ref=e44]: $0.25
+          - generic [ref=e45]: Per Full Analysis
+    - generic [ref=e48]:
+      - generic [ref=e49]: "Analyzes:"
+      - generic [ref=e50]: Aim Quality
+      - generic [ref=e51]: Centering
+      - generic [ref=e52]: Recoil Control
+      - generic [ref=e53]: Tracking
+      - generic [ref=e54]: Flick Accuracy
+      - generic [ref=e55]: Crosshair Placement
+      - generic [ref=e56]: Movement Quality
+      - generic [ref=e57]: Slide/Jump Usage
+      - generic [ref=e58]: Map Awareness
+      - generic [ref=e59]: Use of Cover
+      - generic [ref=e60]: Spawn Awareness
+      - generic [ref=e61]: Power Positions
+      - generic [ref=e62]: Route Choices
+      - generic [ref=e63]: Engagement Selection
+      - generic [ref=e64]: Over-Challenges
+      - generic [ref=e65]: Ego Challs
+      - generic [ref=e66]: Bad Peeks
+      - generic [ref=e67]: Rotation Timing
+      - generic [ref=e68]: Objective Play
+      - generic [ref=e69]: Danger Zone Awareness
+    - generic [ref=e71]:
+      - generic [ref=e72]:
+        - heading "Every Aspect of Your Game, Reviewed" [level=2] [ref=e73]
+        - paragraph [ref=e74]: Not generic AI advice. Specific, competitive-level coaching feedback on everything that matters in ranked play.
+      - generic [ref=e75]:
+        - article [ref=e76]:
+          - img [ref=e78]
+          - heading "Aim & Centering Analysis" [level=3] [ref=e80]
+          - paragraph [ref=e81]: Crosshair placement, recoil control, tracking accuracy, flick precision. Every gunfight broken down.
+        - article [ref=e82]:
+          - img [ref=e84]
+          - heading "Movement Mechanics" [level=3] [ref=e86]
+          - paragraph [ref=e87]: Slide-cancels, bunny hops, strafing, sprint management. Your movement graded like a CDL pro.
+        - article [ref=e88]:
+          - img [ref=e90]
+          - heading "Positioning Review" [level=3] [ref=e92]
+          - paragraph [ref=e93]: Power positions, cover usage, lane control, spawn awareness. Know where you should be and why.
+        - article [ref=e94]:
+          - img [ref=e96]
+          - heading "Decision-Making Breakdown" [level=3] [ref=e106]
+          - paragraph [ref=e107]: Engagement selection, ego challs, over-challenges, bad peeks. Every decision evaluated.
+        - article [ref=e108]:
+          - img [ref=e110]
+          - heading "Map Awareness & Rotations" [level=3] [ref=e113]
+          - paragraph [ref=e114]: Minimap usage, rotation timing, danger zone awareness. See the map like a pro sees it.
+        - article [ref=e115]:
+          - img [ref=e117]
+          - heading "Recurring Pattern Detection" [level=3] [ref=e119]
+          - paragraph [ref=e120]: Bad habits that repeat across your gameplay. The patterns holding you back, surfaced and called out.
+    - generic [ref=e122]:
+      - generic [ref=e123]:
+        - heading "Three Steps to Better Gameplay" [level=2] [ref=e124]
+        - paragraph [ref=e125]: Upload, wait a couple minutes, and get a report that would take a human coach hours to produce.
+      - generic [ref=e126]:
+        - generic [ref=e127]:
+          - img [ref=e128]
+          - generic [ref=e130]:
+            - generic [ref=e131]: "01"
+            - heading "Upload Your VOD" [level=3] [ref=e132]
+            - paragraph [ref=e133]: Drop in up to 15 minutes of Black Ops 7 gameplay. MP4, MOV, WebM, AVI, or MKV.
+        - generic [ref=e134]:
+          - img [ref=e135]
+          - generic [ref=e137]:
+            - generic [ref=e138]: "02"
+            - heading "AI Watches Your Full Video" [level=3] [ref=e139]
+            - paragraph [ref=e140]: Native video analysis - the AI watches your entire gameplay as continuous video, not just still frames.
+        - generic [ref=e142]:
+          - generic [ref=e143]: "03"
+          - heading "Get Your Coaching Report" [level=3] [ref=e144]
+          - paragraph [ref=e145]: Timestamped feedback, skill ratings, patterns, and your top 3 priorities to improve.
+    - generic [ref=e147]:
+      - generic [ref=e148]:
+        - heading "Your Report Includes" [level=2] [ref=e149]
+        - paragraph [ref=e150]: A structured, pro-level coaching report covering every dimension of competitive COD performance.
+      - generic [ref=e151]:
+        - generic [ref=e152]:
+          - img [ref=e153]
+          - generic [ref=e156]:
+            - heading "Overall Skill Rating" [level=3] [ref=e157]
+            - paragraph [ref=e158]: 1-10 CDL-calibrated score with tier label
+        - generic [ref=e159]:
+          - img [ref=e160]
+          - generic [ref=e163]:
+            - heading "Key Strengths" [level=3] [ref=e164]
+            - paragraph [ref=e165]: What you're doing right - genuine positives only
+        - generic [ref=e166]:
+          - img [ref=e167]
+          - generic [ref=e171]:
+            - heading "Key Mistakes" [level=3] [ref=e172]
+            - paragraph [ref=e173]: Exact mistakes with timestamps and severity
+        - generic [ref=e174]:
+          - img [ref=e175]
+          - generic [ref=e178]:
+            - heading "Timestamp Analysis" [level=3] [ref=e179]
+            - paragraph [ref=e180]: Every critical moment broken down second by second
+        - generic [ref=e181]:
+          - img [ref=e182]
+          - generic [ref=e185]:
+            - heading "Recurring Patterns" [level=3] [ref=e186]
+            - paragraph [ref=e187]: Bad habits surfaced with frequency and impact ratings
+        - generic [ref=e188]:
+          - img [ref=e189]
+          - generic [ref=e191]:
+            - heading "Mechanical Ratings" [level=3] [ref=e192]
+            - paragraph [ref=e193]: "8 metrics: aim, centering, recoil, tracking, flicks..."
+        - generic [ref=e194]:
+          - img [ref=e195]
+          - generic [ref=e205]:
+            - heading "Decision Review" [level=3] [ref=e206]
+            - paragraph [ref=e207]: Ego challs, bad peeks, over-challenges catalogued
+        - generic [ref=e208]:
+          - img [ref=e209]
+          - generic [ref=e211]:
+            - heading "Positioning Review" [level=3] [ref=e212]
+            - paragraph [ref=e213]: "6 metrics: map awareness, cover, spawns, routes..."
+        - generic [ref=e214]:
+          - img [ref=e215]
+          - generic [ref=e217]:
+            - heading "Top 3 Priorities" [level=3] [ref=e218]
+            - paragraph [ref=e219]: The 3 most impactful things to fix right now
+    - generic [ref=e221]:
+      - generic [ref=e222]:
+        - img [ref=e223]
+        - img [ref=e225]
+        - img [ref=e227]
+        - img [ref=e229]
+        - img [ref=e231]
+      - blockquote [ref=e233]: “Like having a CDL analyst break down your gameplay in 2 minutes. It caught habits I didn't even know I had - ego challing the same angle over and over, never using my minimap on rotations.”
+      - generic [ref=e234]:
+        - img [ref=e236]
+        - generic [ref=e241]:
+          - generic [ref=e242]: Ranked Play Grinder
+          - generic [ref=e243]: Iridescent, 1.4 K/D
+    - generic [ref=e245]:
+      - heading "Frequently Asked Questions" [level=2] [ref=e246]
+      - generic [ref=e247]:
+        - group [ref=e248]:
+          - generic "What game modes does the analyzer support?" [ref=e249] [cursor=pointer]:
+            - text: What game modes does the analyzer support?
+            - img [ref=e250]
+        - group [ref=e252]:
+          - generic "How long does the analysis take?" [ref=e253] [cursor=pointer]:
+            - text: How long does the analysis take?
+            - img [ref=e254]
+        - group [ref=e256]:
+          - generic "What video formats are supported?" [ref=e257] [cursor=pointer]:
+            - text: What video formats are supported?
+            - img [ref=e258]
+        - group [ref=e260]:
+          - generic "How accurate is the AI analysis?" [ref=e261] [cursor=pointer]:
+            - text: How accurate is the AI analysis?
+            - img [ref=e262]
+        - group [ref=e264]:
+          - generic "What's the maximum video length?" [ref=e265] [cursor=pointer]:
+            - text: What's the maximum video length?
+            - img [ref=e266]
+        - group [ref=e268]:
+          - generic "How is this different from generic AI advice?" [ref=e269] [cursor=pointer]:
+            - text: How is this different from generic AI advice?
+            - img [ref=e270]
+    - generic [ref=e273]:
+      - heading "Ready to Level Up?" [level=2] [ref=e274]
+      - paragraph [ref=e275]: Upload your gameplay. Get your report. Start winning more gunfights.
+      - link "Analyze My VOD" [ref=e276] [cursor=pointer]:
+        - /url: /upload
+        - img [ref=e277]
+        - text: Analyze My VOD
+      - paragraph [ref=e279]: No account required. Upload and analyze instantly.
+  - contentinfo [ref=e280]:
+    - generic [ref=e281]:
+      - generic [ref=e282]:
+        - generic [ref=e283]:
+          - generic [ref=e284]:
+            - img [ref=e285]
+            - generic [ref=e287]: BO7 VOD Analyzer
+          - paragraph [ref=e288]: AI-powered competitive Call of Duty coaching. Upload your Black Ops 7 gameplay and get a pro-level VOD review with timestamped feedback, mechanical skill ratings, and personalized improvement plans.
+        - generic [ref=e289]:
+          - heading "Product" [level=4] [ref=e290]
+          - list [ref=e291]:
+            - listitem [ref=e292]:
+              - link "Analyze VOD" [ref=e293] [cursor=pointer]:
+                - /url: /upload
+            - listitem [ref=e294]:
+              - link "Pricing" [ref=e295] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e296]:
+              - link "How It Works" [ref=e297] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e298]:
+              - link "Blog" [ref=e299] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=e300]:
+          - heading "Analysis Covers" [level=4] [ref=e301]
+          - list [ref=e302]:
+            - listitem [ref=e303]: Aim & Centering
+            - listitem [ref=e304]: Movement Mechanics
+            - listitem [ref=e305]: Positioning & Map Awareness
+            - listitem [ref=e306]: Decision-Making
+            - listitem [ref=e307]: Spawn & Rotation Timing
+      - generic [ref=e308]:
+        - paragraph [ref=e309]: © 2026 BO7 VOD Analyzer. Not affiliated with Activision or the CDL.
+        - paragraph [ref=e310]: Powered by AI vision analysis. Results are analytical estimates, not definitive assessments.

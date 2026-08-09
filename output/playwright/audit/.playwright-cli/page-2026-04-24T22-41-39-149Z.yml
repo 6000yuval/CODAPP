@@ -1,0 +1,383 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "BO7 VOD Analyzer" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]:
+          - generic [ref=e9]: BO7 VOD
+          - generic [ref=e10]: Analyzer
+      - generic [ref=e11]:
+        - link "How It Works" [ref=e12] [cursor=pointer]:
+          - /url: /about
+        - link "Pricing" [ref=e13] [cursor=pointer]:
+          - /url: /pricing
+        - link "Blog" [ref=e14] [cursor=pointer]:
+          - /url: /blog
+        - link "Analyze VOD" [ref=e15] [cursor=pointer]:
+          - /url: /upload
+  - main [ref=e16]:
+    - generic [ref=e117]:
+      - link "Analyze another VOD" [ref=e118] [cursor=pointer]:
+        - /url: /upload
+        - img [ref=e119]
+        - text: Analyze another VOD
+      - generic [ref=e121]:
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - generic [ref=e124]:
+              - img [ref=e125]
+              - generic [ref=e128]:
+                - generic [ref=e129]: "4.6"
+                - generic [ref=e130]: /10
+            - generic [ref=e131]: AVERAGE
+          - generic [ref=e132]:
+            - heading "Pro VOD Review" [level=1] [ref=e134]
+            - generic [ref=e136]:
+              - generic [ref=e137]:
+                - generic [ref=e138]:
+                  - paragraph [ref=e139]: Aim
+                  - generic [ref=e140]: 9.5/10
+                - generic [ref=e141]:
+                  - generic [ref=e142]:
+                    - generic [ref=e143]: Aim Quality
+                    - generic [ref=e144]: 9.5/10
+                  - generic [ref=e145]:
+                    - generic [ref=e146]: Centering
+                    - generic [ref=e147]: 9.7/10
+                  - generic [ref=e148]:
+                    - generic [ref=e149]: Recoil Control
+                    - generic [ref=e150]: 9.4/10
+                  - generic [ref=e151]:
+                    - generic [ref=e152]: Tracking
+                    - generic [ref=e153]: 9.6/10
+                  - generic [ref=e154]:
+                    - generic [ref=e155]: Flick Accuracy
+                    - generic [ref=e156]: 9.5/10
+                  - generic [ref=e157]:
+                    - generic [ref=e158]: Crosshair Placement
+                    - generic [ref=e159]: 9.7/10
+                  - generic [ref=e160]:
+                    - generic [ref=e161]: Movement Quality
+                    - generic [ref=e162]: 4.4/10
+                  - generic [ref=e163]:
+                    - generic [ref=e164]: Slide/Jump Usage
+                    - generic [ref=e165]: 4.6/10
+              - generic [ref=e166]:
+                - generic [ref=e167]:
+                  - paragraph [ref=e168]: Positioning
+                  - generic [ref=e169]: 1.9/10
+                - generic [ref=e170]:
+                  - generic [ref=e171]:
+                    - generic [ref=e172]: Map Awareness
+                    - generic [ref=e173]: 1.9/10
+                  - generic [ref=e174]:
+                    - generic [ref=e175]: Use of Cover
+                    - generic [ref=e176]: 2.0/10
+                  - generic [ref=e177]:
+                    - generic [ref=e178]: Spawn Awareness
+                    - generic [ref=e179]: 2.4/10
+                  - generic [ref=e180]:
+                    - generic [ref=e181]: Power Positions
+                    - generic [ref=e182]: 2.2/10
+                  - generic [ref=e183]:
+                    - generic [ref=e184]: Route Choices
+                    - generic [ref=e185]: 2.4/10
+                  - generic [ref=e186]:
+                    - generic [ref=e187]: Danger Zone Awareness
+                    - generic [ref=e188]: 2.1/10
+              - generic [ref=e189]:
+                - generic [ref=e190]:
+                  - paragraph [ref=e191]: Decision-Making
+                  - generic [ref=e192]: 3.9/10
+                - generic [ref=e193]:
+                  - generic [ref=e194]:
+                    - generic [ref=e195]: Engagement Selection
+                    - generic [ref=e196]: 3.9/10
+                  - generic [ref=e197]:
+                    - generic [ref=e198]: Rotation Timing
+                    - generic [ref=e199]: 4.2/10
+                  - generic [ref=e200]:
+                    - generic [ref=e201]: Objective Play
+                    - generic [ref=e202]: 3.5/10
+                  - generic [ref=e203]:
+                    - generic [ref=e204]: Over-Challenges (count)
+                    - generic [ref=e205]: 0.0/10
+                  - generic [ref=e206]:
+                    - generic [ref=e207]: Ego Challs (count)
+                    - generic [ref=e208]: 0.0/10
+                  - generic [ref=e209]:
+                    - generic [ref=e210]: Bad Peeks (count)
+                    - generic [ref=e211]: 0.0/10
+            - paragraph [ref=e212]: You secured the first blood, which is a critical advantage in any round. A significant issue was your post-kill discipline; you consistently remained exposed after engagements.
+            - paragraph [ref=e213]: You shoot well, but positioning and decision-making are costing you rounds.
+            - button "Download HTML Report" [ref=e215] [cursor=pointer]:
+              - img [ref=e216]
+              - text: Download HTML Report
+        - generic [ref=e219]:
+          - heading "Clip Review" [level=2] [ref=e220]:
+            - img [ref=e221]
+            - text: Clip Review
+          - generic [ref=e224]:
+            - paragraph [ref=e226]: Click any timeline moment below, then press Watch Clip to jump to that timestamp.
+            - generic [ref=e486]:
+              - paragraph [ref=e487]: Active Moment (0:08)
+              - paragraph [ref=e488]: Overexposed Post-Kill
+              - paragraph [ref=e489]: Immediately after securing the first kill, you remained in an open, vulnerable position instead of seeking cover or repositioning. This is a critical 'overheat after blood' mistake.
+        - generic [ref=e227]:
+          - heading "Timestamp-by-Timestamp Analysis" [level=2] [ref=e228]:
+            - img [ref=e229]
+            - text: Timestamp-by-Timestamp Analysis
+          - generic [ref=e232]:
+            - generic [ref=e234] [cursor=pointer]:
+              - generic [ref=e235]:
+                - generic [ref=e236]: 0:00
+                - img [ref=e238]
+                - generic [ref=e248]: Aggressive Initial Push
+              - generic [ref=e249]:
+                - generic [ref=e250]: neutral
+                - img [ref=e251]
+            - generic [ref=e254] [cursor=pointer]:
+              - generic [ref=e255]:
+                - generic [ref=e256]: 0:06
+                - img [ref=e258]
+                - generic [ref=e260]: First Blood Engagement
+              - generic [ref=e261]:
+                - generic [ref=e262]: excellent
+                - img [ref=e263]
+            - generic [ref=e265] [cursor=pointer]:
+              - generic [ref=e266]:
+                - generic [ref=e267]:
+                  - generic [ref=e268]: 0:08
+                  - img [ref=e270]
+                  - generic [ref=e272]: Overexposed Post-Kill
+                - generic [ref=e273]:
+                  - generic [ref=e274]: terrible
+                  - img [ref=e475]
+              - generic [ref=e477]:
+                - paragraph [ref=e478]: Immediately after securing the first kill, you remained in an open, vulnerable position instead of seeking cover or repositioning. This is a critical 'overheat after blood' mistake.
+                - button "Watch Clip" [active] [ref=e479]:
+                  - img [ref=e480]
+                  - text: Watch Clip
+                - generic [ref=e483]:
+                  - paragraph [ref=e484]: What You Should Do
+                  - paragraph [ref=e485]: After any kill, especially a first blood, immediately break line of sight, re-evaluate, and reposition. Don't give the enemy a free trade.
+            - generic [ref=e278] [cursor=pointer]:
+              - generic [ref=e279]:
+                - generic [ref=e280]: 0:08
+                - img [ref=e282]
+                - generic [ref=e285]: Untradeable Death
+              - generic [ref=e286]:
+                - generic [ref=e287]: Killcam Inference
+                - generic [ref=e288]: medium
+                - generic [ref=e289]: bad
+                - img [ref=e290]
+            - generic [ref=e293] [cursor=pointer]:
+              - generic [ref=e294]:
+                - generic [ref=e295]: 0:08
+                - img [ref=e297]
+                - generic [ref=e300]: Tunnel Vision on Initial Lane
+              - generic [ref=e301]:
+                - generic [ref=e302]: medium
+                - generic [ref=e303]: bad
+                - img [ref=e304]
+            - generic [ref=e307] [cursor=pointer]:
+              - generic [ref=e308]:
+                - generic [ref=e309]: 0:08
+                - img [ref=e311]
+                - generic [ref=e313]: Lack of Cover Discipline
+              - generic [ref=e314]:
+                - generic [ref=e315]: bad
+                - img [ref=e316]
+        - generic [ref=e318]:
+          - heading "What a Pro Does Instead" [level=2] [ref=e319]:
+            - img [ref=e320]
+            - text: What a Pro Does Instead
+          - generic [ref=e323]:
+            - generic [ref=e324]:
+              - paragraph [ref=e325]: 0:08 - Overexposed Post-Kill
+              - generic [ref=e326]:
+                - paragraph [ref=e327]:
+                  - generic [ref=e328]: Safest
+                  - text: After any kill, especially a first blood, immediately break line of sight, re-evaluate, and reposition. Don't give the enemy a free trade.
+                - paragraph [ref=e329]:
+                  - generic [ref=e330]: Aggressive
+                  - text: Re-chall only with pre-aim + cover touch + teammate pressure active.
+                - paragraph [ref=e331]:
+                  - generic [ref=e332]: Solo Queue
+                  - text: Take the 70/30 version of this fight. If no trade path, disengage and hold info.
+            - generic [ref=e333]:
+              - paragraph [ref=e334]: 0:08 - Untradeable Death
+              - generic [ref=e335]:
+                - paragraph [ref=e336]:
+                  - generic [ref=e337]: Safest
+                  - text: Always consider your teammates' positions when taking engagements. Play for trades, especially when pushing or holding aggressive angles.
+                - paragraph [ref=e338]:
+                  - generic [ref=e339]: Aggressive
+                  - text: Re-chall only with pre-aim + cover touch + teammate pressure active.
+                - paragraph [ref=e340]:
+                  - generic [ref=e341]: Solo Queue
+                  - text: Take the 70/30 version of this fight. If no trade path, disengage and hold info.
+            - generic [ref=e342]:
+              - paragraph [ref=e343]: 0:08 - Tunnel Vision on Initial Lane
+              - generic [ref=e344]:
+                - paragraph [ref=e345]:
+                  - generic [ref=e346]: Safest
+                  - text: Develop a post-kill routine that includes a quick 360-degree scan or checking common follow-up angles, especially when you know multiple enemies are alive.
+                - paragraph [ref=e347]:
+                  - generic [ref=e348]: Aggressive
+                  - text: Re-chall only with pre-aim + cover touch + teammate pressure active.
+                - paragraph [ref=e349]:
+                  - generic [ref=e350]: Solo Queue
+                  - text: Take the 70/30 version of this fight. If no trade path, disengage and hold info.
+        - generic [ref=e351]:
+          - heading "Top 3 Priorities to Fix" [level=2] [ref=e352]:
+            - img [ref=e353]
+            - text: Top 3 Priorities to Fix
+          - generic [ref=e355]:
+            - generic [ref=e356]:
+              - generic [ref=e358]: "1"
+              - paragraph [ref=e359]: After any kill, especially a first blood, immediately break line of sight, re-evaluate, and reposition. Don't give the enemy a free trade.
+            - generic [ref=e360]:
+              - generic [ref=e362]: "2"
+              - paragraph [ref=e363]: Always consider your teammates' positions when taking engagements. Play for trades, especially when pushing or holding aggressive angles.
+            - generic [ref=e364]:
+              - generic [ref=e366]: "3"
+              - paragraph [ref=e367]: Develop a post-kill routine that includes a quick 360-degree scan or checking common follow-up angles, especially when you know multiple enemies are alive.
+        - generic [ref=e368]:
+          - generic [ref=e369]:
+            - heading "Key Strengths" [level=2] [ref=e370]:
+              - img [ref=e371]
+              - text: Key Strengths
+            - generic [ref=e375]:
+              - heading "First Blood Engagement" [level=3] [ref=e376]
+              - paragraph [ref=e377]: Your reaction time and aim were sharp, securing the crucial first blood with a headshot and giving your team an early man advantage.
+          - generic [ref=e378]:
+            - heading "Key Mistakes" [level=2] [ref=e379]:
+              - img [ref=e380]
+              - text: Key Mistakes
+            - generic [ref=e382]:
+              - generic [ref=e383]:
+                - generic [ref=e384]:
+                  - heading "Overexposed Post-Kill" [level=3] [ref=e385]
+                  - generic [ref=e386]: critical
+                - paragraph [ref=e387]: Immediately after securing the first kill, you remained in an open, vulnerable position instead of seeking cover or repositioning. This is a critical 'overheat after blood' mistake.
+              - generic [ref=e388]:
+                - generic [ref=e389]:
+                  - heading "Untradeable Death" [level=3] [ref=e390]
+                  - generic [ref=e391]: high
+                - paragraph [ref=e392]: Your death occurred in an isolated position, making it impossible for a teammate to trade you out. This means the enemy gained a kill without losing a player, negating your first blood.
+              - generic [ref=e393]:
+                - generic [ref=e394]:
+                  - heading "Tunnel Vision on Initial Lane" [level=3] [ref=e395]
+                  - generic [ref=e396]: high
+                - paragraph [ref=e397]: After the first kill, your focus remained on the initial lane, neglecting other potential enemy push points or flanks. The enemy who killed you came from a slightly different angle within the building.
+              - generic [ref=e398]:
+                - generic [ref=e399]:
+                  - heading "Lack of Cover Discipline" [level=3] [ref=e400]
+                  - generic [ref=e401]: high
+                - paragraph [ref=e402]: You were caught in the open with no immediate cover to fall back on after the first engagement. This makes you an easy target for follow-up shots.
+        - generic [ref=e403]:
+          - heading "Top 3 SR-Leaking Habits" [level=2] [ref=e404]:
+            - img [ref=e405]
+            - text: Top 3 SR-Leaking Habits
+          - generic [ref=e407]:
+            - generic [ref=e408]:
+              - generic [ref=e409]:
+                - generic [ref=e410]: "1"
+                - heading "Untradeable Wide Exposure" [level=3] [ref=e411]
+                - generic [ref=e412]: Medium
+                - generic [ref=e413]: top250
+              - paragraph [ref=e414]: "Trigger: Taking gunfights while open to multiple angles with weak teammate trade access."
+              - paragraph [ref=e415]: "Replacement: Slice one angle at a time and anchor to cover before committing damage."
+              - paragraph [ref=e416]: "Drill: In your next 3 maps, call out your cover before each chall: left/right hard cover only."
+            - generic [ref=e417]:
+              - generic [ref=e418]:
+                - generic [ref=e419]: "2"
+                - heading "Unsafe positioning under pressure" [level=3] [ref=e420]
+                - generic [ref=e421]: Medium
+                - generic [ref=e422]: iridescent
+              - paragraph [ref=e423]: "Trigger: Repeated exposure in open lanes or weak cover usage appears across several moments."
+              - paragraph [ref=e424]: "Replacement: Always consider your teammates' positions when taking engagements. Play for trades, especially when pushing or holding aggressive angles."
+              - paragraph [ref=e425]: "Drill: Tag each occurrence in your next map and force one deliberate correction per occurrence."
+            - generic [ref=e426]:
+              - generic [ref=e427]:
+                - generic [ref=e428]: "3"
+                - heading "SR Leak 3" [level=3] [ref=e429]
+                - generic [ref=e430]: Insufficient Sample
+                - generic [ref=e431]: crimson
+              - paragraph [ref=e432]: "Trigger: Insufficient repeated moments captured for a stronger taxonomy label."
+              - paragraph [ref=e433]: "Replacement: Develop a post-kill routine that includes a quick 360-degree scan or checking common follow-up angles, especially when you know multiple enemies are alive."
+              - paragraph [ref=e434]: "Drill: Track this mistake manually over your next 3 ranked games."
+        - generic [ref=e435]:
+          - heading "Recurring Patterns Detected" [level=2] [ref=e436]:
+            - img [ref=e437]
+            - text: Recurring Patterns Detected
+          - generic [ref=e441]:
+            - generic [ref=e442]:
+              - generic [ref=e443]: Unsafe positioning under pressure
+              - generic [ref=e444]: frequent
+              - generic [ref=e445]: high impact
+            - paragraph [ref=e446]: Repeated exposure in open lanes or weak cover usage appears across several moments.
+        - generic [ref=e447]:
+          - heading "Training Prescription (Next 7 Days)" [level=2] [ref=e448]:
+            - img [ref=e449]
+            - text: Training Prescription (Next 7 Days)
+          - generic [ref=e452]:
+            - generic [ref=e453]:
+              - paragraph [ref=e454]: 1. Untradeable Wide Exposure
+              - paragraph [ref=e455]: "Cue: Cover before Chall"
+              - paragraph [ref=e456]: "Prescription: In your next 3 maps, call out your cover before each chall: left/right hard cover only."
+              - paragraph [ref=e457]: "Target: Cut this habit by 50% over the next 5 ranked maps."
+            - generic [ref=e458]:
+              - paragraph [ref=e459]: 2. Unsafe positioning under pressure
+              - paragraph [ref=e460]: "Cue: Stable First Bullets"
+              - paragraph [ref=e461]: "Prescription: Tag each occurrence in your next map and force one deliberate correction per occurrence."
+              - paragraph [ref=e462]: "Target: Cut this habit by 50% over the next 5 ranked maps."
+            - generic [ref=e463]:
+              - paragraph [ref=e464]: 3. SR Leak 3
+              - paragraph [ref=e465]: "Cue: Stable First Bullets"
+              - paragraph [ref=e466]: "Prescription: Track this mistake manually over your next 3 ranked games."
+              - paragraph [ref=e467]: "Target: Cut this habit by 30% over the next 5 ranked maps."
+        - generic [ref=e468]:
+          - heading "Coach's Final Word" [level=2] [ref=e469]:
+            - img [ref=e470]
+            - text: Coach's Final Word
+          - paragraph [ref=e474]: "Your profile in this VOD: Aim 9.5/10, Positioning 1.9/10, Decision-Making 3.9/10. What you are doing well: you can win clean gunfights; first blood engagement. What is costing you SR right now: untradeable wide exposure; positioning under pressure; fight decisions after contact. Stop doing this immediately: untradeable wide exposure. Do this instead every fight: After any kill, especially a first blood, immediately break line of sight, re-evaluate, and reposition. Don't give the enemy a free trade.. Next 5 ranked maps plan: 1) Untradeable Wide Exposure: In your next 3 maps, call out your cover before each chall: left/right hard cover only. Target: Cut this habit by 50% over the next 5 ranked maps. 2) Unsafe positioning under pressure: Tag each occurrence in your next map and force one deliberate correction per occurrence. Target: Cut this habit by 50% over the next 5 ranked maps. 3) SR Leak 3: Track this mistake manually over your next 3 ranked games. Target: Cut this habit by 30% over the next 5 ranked maps. Success condition: fewer isolated deaths, fewer panic re-challs, and better life value after each first blood."
+  - contentinfo [ref=e67]:
+    - generic [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - img [ref=e72]
+            - generic [ref=e74]: BO7 VOD Analyzer
+          - paragraph [ref=e75]: AI-powered competitive Call of Duty coaching. Upload your Black Ops 7 gameplay and get a pro-level VOD review with timestamped feedback, mechanical skill ratings, and personalized improvement plans.
+        - generic [ref=e76]:
+          - heading "Product" [level=4] [ref=e77]
+          - list [ref=e78]:
+            - listitem [ref=e79]:
+              - link "Analyze VOD" [ref=e80] [cursor=pointer]:
+                - /url: /upload
+            - listitem [ref=e81]:
+              - link "Pricing" [ref=e82] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e83]:
+              - link "How It Works" [ref=e84] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e85]:
+              - link "Blog" [ref=e86] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=e87]:
+          - heading "Analysis Covers" [level=4] [ref=e88]
+          - list [ref=e89]:
+            - listitem [ref=e90]: Aim & Centering
+            - listitem [ref=e91]: Movement Mechanics
+            - listitem [ref=e92]: Positioning & Map Awareness
+            - listitem [ref=e93]: Decision-Making
+            - listitem [ref=e94]: Spawn & Rotation Timing
+      - generic [ref=e95]:
+        - paragraph [ref=e96]: © 2026 BO7 VOD Analyzer. Not affiliated with Activision or the CDL.
+        - paragraph [ref=e97]: Powered by AI vision analysis. Results are analytical estimates, not definitive assessments.
+  - button "Open Next.js Dev Tools" [ref=e103] [cursor=pointer]:
+    - img [ref=e104]
+  - alert [ref=e107]: Gameplay Analysis | BO7 VOD Analyzer

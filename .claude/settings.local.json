@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ffmpeg -version)",
+      "Bash(node --version)",
+      "Bash(npm --version)",
+      "WebSearch",
+      "Bash(npm install)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(npx vite build)",
+      "Bash(npm run dev)",
+      "Bash(npx next build)"
+    ]
+  }
+}
