@@ -76,7 +76,14 @@ export function createJob(id: string, videoPath: string, accessToken: string, vi
 
 export function findCompletedJobByVideoHash(videoHash: string): Job | undefined {
   return Array.from(jobs.values())
-    .filter((job) => job.status === "complete" && !!job.report && job.videoHash === videoHash)
+    .filter(
+      (job) =>
+        job.status === "complete" &&
+        !!job.report &&
+        Array.isArray(job.report.timeline) &&
+        job.report.timeline.length > 0 &&
+        job.videoHash === videoHash
+    )
     .sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime())[0];
 }
 

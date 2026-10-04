@@ -7,3 +7,4 @@ uploads/
 data/
 frames/
 *.log
+.playwright-cli/

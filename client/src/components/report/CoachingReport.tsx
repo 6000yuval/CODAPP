@@ -9,6 +9,7 @@ import {
 import ScoreCircle from "./ScoreCircle";
 import TimelineItem from "./TimelineItem";
 import { getVideoUrl } from "@/lib/api";
+import { buildHtmlReport } from "@/lib/html-report";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 interface Props {
@@ -86,169 +87,6 @@ function Section({ title, icon, children, id }: { title: string; icon: React.Rea
       {children}
     </section>
   );
-}
-
-function escapeHtml(value: unknown): string {
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll("\"", "&quot;")
-    .replaceAll("'", "&#39;");
-}
-
-function buildHtmlReport(report: any): string {
-  const timelineRows = (report.timeline || [])
-    .map(
-      (m: any) => `
-      <div class="card">
-        <div class="row">
-          <span class="pill">${escapeHtml(m.timestamp)}</span>
-          <strong>${escapeHtml(m.event)}</strong>
-          <span class="pill">${escapeHtml(m.category)}</span>
-          <span class="pill">${escapeHtml(m.rating)}</span>
-        </div>
-        <p>${escapeHtml(m.analysis)}</p>
-        ${m.recommendation ? `<p><strong>Recommendation:</strong> ${escapeHtml(m.recommendation)}</p>` : ""}
-      </div>`
-    )
-    .join("");
-  const habitRows = (report.srLeakingHabits || [])
-    .map(
-      (h: any) => `
-      <div class="card">
-        <div class="row">
-          <strong>${escapeHtml(h.name)}</strong>
-          <span class="pill">${escapeHtml(h.punishment || "ranked")}</span>
-          <span class="pill">${escapeHtml(h.confidence || "unknown")}</span>
-        </div>
-        <p><strong>Trigger:</strong> ${escapeHtml(h.trigger)}</p>
-        <p><strong>Replacement:</strong> ${escapeHtml(h.replacement)}</p>
-        <p><strong>Drill:</strong> ${escapeHtml(h.drill)}</p>
-      </div>`
-    )
-    .join("");
-
-  const breakdownColumns = [
-    {
-      title: "Aim",
-      metrics: [
-        ["Aim Quality", report.mechanicalReview?.aimQuality],
-        ["Centering", report.mechanicalReview?.centering],
-        ["Recoil Control", report.mechanicalReview?.recoilControl],
-        ["Tracking", report.mechanicalReview?.tracking],
-        ["Flick Accuracy", report.mechanicalReview?.flickAccuracy],
-        ["Crosshair Placement", report.mechanicalReview?.crosshairPlacement],
-        ["Movement Quality", report.mechanicalReview?.movementQuality],
-        ["Slide/Jump Usage", report.mechanicalReview?.slideJumpUsage],
-      ],
-    },
-    {
-      title: "Positioning",
-      metrics: [
-        ["Map Awareness", report.positioningReview?.mapAwareness],
-        ["Use of Cover", report.positioningReview?.useOfCover],
-        ["Spawn Awareness", report.positioningReview?.spawnAwareness],
-        ["Power Positions", report.positioningReview?.powerPositions],
-        ["Route Choices", report.positioningReview?.routeChoices],
-        ["Danger Zone Awareness", report.positioningReview?.dangerZoneAwareness],
-      ],
-    },
-    {
-      title: "Decision-Making",
-      metrics: [
-        ["Engagement Selection", report.decisionMakingReview?.engagementSelection],
-        ["Rotation Timing", report.decisionMakingReview?.rotationTiming],
-        ["Objective Play", report.decisionMakingReview?.objectivePlay],
-        ["Over-Challenges (count)", (report.decisionMakingReview?.overChallenges || []).length],
-        ["Ego Challs (count)", (report.decisionMakingReview?.egoChalls || []).length],
-        ["Bad Peeks (count)", (report.decisionMakingReview?.badPeeks || []).length],
-      ],
-    },
-  ];
-
-  const breakdownHtml = breakdownColumns
-    .map(
-      (col) => `
-      <div class="card">
-        <h3>${escapeHtml(col.title)}</h3>
-        ${col.metrics
-          .map(
-            ([label, value]) =>
-              `<p><strong>${escapeHtml(label)}:</strong> ${escapeHtml(formatScore(value))}</p>`
-          )
-          .join("")}
-      </div>`
-    )
-    .join("");
-
-  const list = (items: any[]) =>
-    (items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-
-  return `<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VOD Report - ${escapeHtml(report.mapName || "Gameplay")}</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; color: #e5e7eb; background: #0b1020; }
-    h1, h2, h3 { color: #ffffff; }
-    .meta { opacity: .8; margin-bottom: 12px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
-    .card { background: #111831; border: 1px solid #263155; border-radius: 12px; padding: 12px; margin: 10px 0; }
-    .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
-    .pill { font-size: 12px; background: #1d2a50; padding: 4px 8px; border-radius: 999px; border: 1px solid #33416e; }
-    ul { margin-top: 8px; }
-    li { margin: 4px 0; }
-    .score { font-size: 28px; font-weight: bold; color: #22c55e; }
-  </style>
-</head>
-<body>
-  <h1>Pro VOD Review</h1>
-  <p class="meta"><strong>Map:</strong> ${escapeHtml(report.mapName || "Unknown")} | <strong>Mode:</strong> ${escapeHtml(report.gameMode || "Unknown")}</p>
-  <p class="score">Overall Rating: ${escapeHtml(report.overallRating)}/10</p>
-  <div class="card">
-    <h2>Overview</h2>
-    <p>${escapeHtml(report.overview)}</p>
-  </div>
-  <div class="card">
-    <h2>Direct Summary</h2>
-    <p>${escapeHtml(buildDirectSummary(
-      Number(report?.mechanicalReview?.aimQuality ?? report?.overallRating ?? 5),
-      Number(report?.positioningReview?.mapAwareness ?? report?.overallRating ?? 5),
-      Number(report?.decisionMakingReview?.engagementSelection ?? report?.overallRating ?? 5)
-    ))}</p>
-  </div>
-  <div class="grid">${breakdownHtml}</div>
-  <div class="grid">
-    <div class="card">
-      <h3>Top Priorities</h3>
-      <ul>${list(report.topThreePriorities || [])}</ul>
-    </div>
-    <div class="card">
-      <h3>Key Strengths</h3>
-      <ul>${list((report.keyStrengths || []).map((x: any) => x.title))}</ul>
-    </div>
-    <div class="card">
-      <h3>Key Mistakes</h3>
-      <ul>${list((report.keyMistakes || []).map((x: any) => x.title))}</ul>
-    </div>
-  </div>
-  <div class="card">
-    <h2>Top SR-Leaking Habits</h2>
-    ${habitRows || "<p>No habit leaks extracted.</p>"}
-  </div>
-  <div class="card">
-    <h2>Timestamp-by-Timestamp Analysis</h2>
-    ${timelineRows || "<p>No timeline entries.</p>"}
-  </div>
-  <div class="card">
-    <h2>Coach's Final Word</h2>
-    <p>${escapeHtml(report.coachingSummary || "")}</p>
-  </div>
-</body>
-</html>`;
 }
 
 export default function CoachingReport({ report, jobId, accessToken }: Props) {
@@ -354,7 +192,7 @@ export default function CoachingReport({ report, jobId, accessToken }: Props) {
     const html = buildHtmlReport({
       ...report,
       exportedAt: new Date().toISOString(),
-      exportVersion: "1.1-html",
+      exportVersion: "1.2-full-html",
     });
     const blob = new Blob([html], { type: "text/html;charset=utf-8" });
     const url = URL.createObjectURL(blob);

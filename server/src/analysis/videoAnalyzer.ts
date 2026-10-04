@@ -68,10 +68,71 @@ let client: GoogleGenAI | null = null;
 const FILE_POLL_INTERVAL_MS = 2000;
 const FILE_PROCESS_TIMEOUT_MS = 4 * 60 * 1000;
 const MAX_ANALYZABLE_VIDEO_BYTES = 512 * 1024 * 1024; // 512MB
+const INITIAL_MAX_OUTPUT_TOKENS = 12_288;
+const RETRY_MAX_OUTPUT_TOKENS = 16_384;
+
+const VIDEO_ANALYSIS_SCHEMA = {
+  type: "object",
+  required: [
+    "gameMode",
+    "mapName",
+    "observations",
+    "keyMoments",
+    "aimNotes",
+    "movementNotes",
+    "positioningNotes",
+    "decisionNotes",
+  ],
+  properties: {
+    gameMode: {
+      anyOf: [{ type: "string" }, { type: "null" }],
+    },
+    mapName: { anyOf: [{ type: "string" }, { type: "null" }] },
+    observations: {
+      type: "array",
+      items: { type: "string" },
+    },
+    keyMoments: {
+      type: "array",
+      items: {
+        type: "object",
+        required: [
+          "timestamp",
+          "event",
+          "eventKey",
+          "category",
+          "rating",
+          "analysis",
+          "recommendation",
+          "confidence",
+          "perspective",
+        ],
+        properties: {
+          timestamp: { type: "string" },
+          event: { type: "string" },
+          eventKey: { type: "string" },
+          category: { type: "string" },
+          rating: { type: "string" },
+          analysis: { type: "string" },
+          recommendation: { type: "string" },
+          confidence: { type: "string" },
+          perspective: { type: "string" },
+        },
+      },
+    },
+    aimNotes: { type: "array", items: { type: "string" } },
+    movementNotes: { type: "array", items: { type: "string" } },
+    positioningNotes: { type: "array", items: { type: "string" } },
+    decisionNotes: { type: "array", items: { type: "string" } },
+  },
+} as const;
 
 function getClient(): GoogleGenAI {
+  if (!process.env.GOOGLE_API_KEY?.trim()) {
+    throw new Error("GOOGLE_API_KEY is not configured.");
+  }
   if (!client) {
-    client = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY! });
+    client = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY });
   }
   return client;
 }
@@ -473,15 +534,6 @@ function asKeyMoments(value: unknown): VideoAnalysisResult["keyMoments"] {
   return dedupeStableMoments(output);
 }
 
-function fallbackObservations(rawText: string): string[] {
-  const cleaned = stripCodeFence(rawText).replace(/\s+/g, " ").trim();
-  if (!cleaned) return [];
-  if (cleaned.startsWith("{")) {
-    return ["Model output could not be fully parsed. Report quality may be reduced for this run."];
-  }
-  return [cleaned.slice(0, 700)];
-}
-
 export interface VideoAnalysisResult {
   gameMode: string | null;
   mapName: string | null;
@@ -534,48 +586,74 @@ export async function analyzeVideo(videoPath: string): Promise<VideoAnalysisResu
 
   console.log(`[Gemini] File ready, generating report with ${model}...`);
 
-  const response = await ai.models.generateContent({
-    model,
-    contents: createUserContent([
-      createPartFromUri(activeFile.uri, activeFile.mimeType || mimeType),
-      "Analyze this Call of Duty: Black Ops 7 gameplay video and return strict JSON in the required schema.",
-    ]),
-    config: {
-      systemInstruction: SYSTEM_PROMPT,
-      responseMimeType: "application/json",
-      maxOutputTokens: 4096,
-      temperature: 0,
+  const videoPart = createPartFromUri(activeFile.uri, activeFile.mimeType || mimeType);
+  const attempts = [
+    {
+      label: "primary",
+      maxOutputTokens: INITIAL_MAX_OUTPUT_TOKENS,
+      thinkingBudget: 1024,
+      instruction:
+        "Analyze the entire Call of Duty: Black Ops 7 gameplay video from opening through the final playable sequence. Distribute timestamped evidence across the opening, middle, and end. Return concise JSON matching the schema.",
     },
-  });
+    {
+      label: "retry",
+      maxOutputTokens: RETRY_MAX_OUTPUT_TOKENS,
+      thinkingBudget: 0,
+      instruction:
+        "Retry the full-video analysis. The prior response was incomplete or invalid. Cover the opening, middle, and end, keep every field concise, and return only complete JSON matching the schema.",
+    },
+  ];
 
-  const rawAnalysis = response.text || "";
-  const parsed = parseModelPayload(rawAnalysis);
+  let lastFailure = "The model returned no usable response.";
 
-  if (!parsed) {
-    return {
-      gameMode: null,
-      mapName: null,
-      observations: fallbackObservations(rawAnalysis),
-      keyMoments: [],
-      aimNotes: [],
-      movementNotes: [],
-      positioningNotes: [],
-      decisionNotes: [],
-      rawAnalysis,
-    };
+  for (const attempt of attempts) {
+    let response;
+    try {
+      response = await ai.models.generateContent({
+        model,
+        contents: createUserContent([videoPart, attempt.instruction]),
+        config: {
+          systemInstruction: SYSTEM_PROMPT,
+          responseMimeType: "application/json",
+          responseJsonSchema: VIDEO_ANALYSIS_SCHEMA,
+          maxOutputTokens: attempt.maxOutputTokens,
+          thinkingConfig: { thinkingBudget: attempt.thinkingBudget, includeThoughts: false },
+          temperature: 0,
+        },
+      });
+    } catch (error) {
+      lastFailure = error instanceof Error ? error.message : String(error);
+      console.warn(`[Gemini] ${attempt.label} request failed: ${lastFailure}`);
+      continue;
+    }
+
+    const rawAnalysis = response.text || "";
+    const finishReason = String(response.candidates?.[0]?.finishReason || "UNKNOWN");
+    const parsed = parseModelPayload(rawAnalysis);
+    const keyMoments = parsed ? asKeyMoments(parsed.keyMoments) : [];
+
+    console.log(
+      `[Gemini] ${attempt.label} response: finish=${finishReason}, chars=${rawAnalysis.length}, moments=${keyMoments.length}`
+    );
+
+    if (parsed && keyMoments.length >= 3 && finishReason !== "MAX_TOKENS") {
+      return {
+        gameMode: normalizeGameMode(parsed.gameMode),
+        mapName: asNullableString(parsed.mapName),
+        observations: asStringArray(parsed.observations, 8),
+        keyMoments,
+        aimNotes: asStringArray(parsed.aimNotes, 8),
+        movementNotes: asStringArray(parsed.movementNotes, 8),
+        positioningNotes: asStringArray(parsed.positioningNotes, 8),
+        decisionNotes: asStringArray(parsed.decisionNotes, 8),
+        rawAnalysis,
+      };
+    }
+
+    lastFailure = `finish=${finishReason}, responseChars=${rawAnalysis.length}, usableMoments=${keyMoments.length}`;
   }
 
-  return {
-    gameMode: normalizeGameMode(parsed.gameMode),
-    mapName: asNullableString(parsed.mapName),
-    observations: asStringArray(parsed.observations, 8),
-    keyMoments: asKeyMoments(parsed.keyMoments),
-    aimNotes: asStringArray(parsed.aimNotes, 8),
-    movementNotes: asStringArray(parsed.movementNotes, 8),
-    positioningNotes: asStringArray(parsed.positioningNotes, 8),
-    decisionNotes: asStringArray(parsed.decisionNotes, 8),
-    rawAnalysis,
-  };
+  throw new Error(`Gemini returned an incomplete video analysis after retry (${lastFailure}).`);
 }
 
 async function waitForFileActive(ai: GoogleGenAI, fileName: string): Promise<any> {

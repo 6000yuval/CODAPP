@@ -1,0 +1,537 @@
+{
+  "overview": "The player frequently overextends after securing a kill, leading to untradeable deaths. There's a recurring pattern of wide peeks into contested areas without adequate cover or team support.",
+  "overallRating": 5.4,
+  "gameMode": "Hardpoint",
+  "mapName": "Hacienda",
+  "keyStrengths": [
+    {
+      "title": "Clean Opening Pick",
+      "description": "The player executes a clean entry onto the hardpoint, securing two quick kills with good aim and target acquisition.",
+      "severity": "low"
+    },
+    {
+      "title": "Clean Opening Pick",
+      "description": "The player holds a strong position on the terrace, securing multiple kills with precise aim and good recoil control.",
+      "severity": "low"
+    },
+    {
+      "title": "Clean Opening Pick",
+      "description": "The player demonstrates good awareness by wall-banging an enemy through the wall, securing a kill based on sound or intel.",
+      "severity": "low"
+    },
+    {
+      "title": "Clean Opening Pick",
+      "description": "The player quickly swaps to their pistol to finish off an enemy after running out of primary ammo, demonstrating good mechanical skill.",
+      "severity": "low"
+    },
+    {
+      "title": "Clean Opening Pick",
+      "description": "The player uses a jump shot to gain an advantage and secure a kill, showcasing effective movement mechanics.",
+      "severity": "low"
+    }
+  ],
+  "keyMistakes": [
+    {
+      "title": "Overexposed Post-Kill",
+      "description": "The player pushes wide around the truck into a contested area, exposing themselves to multiple angles and getting shot from the left.",
+      "severity": "high"
+    },
+    {
+      "title": "Overheat After Blood",
+      "description": "After securing a kill, the player immediately reloads in the open, allowing an enemy to easily trade them out.",
+      "severity": "high"
+    },
+    {
+      "title": "Untradeable Death",
+      "description": "The player pushes directly into the garage, peeking a known enemy position without cover or a clear trade window, resulting in an immediate death.",
+      "severity": "critical"
+    },
+    {
+      "title": "Lack of Cover Discipline",
+      "description": "The player pushes through the archway into an open area, getting caught by an enemy holding a wide angle from the side.",
+      "severity": "high"
+    },
+    {
+      "title": "Overexposed Post-Kill",
+      "description": "The player peeks a wide angle on the terrace, exposing themselves to an enemy holding a tight angle, leading to a quick death.",
+      "severity": "high"
+    }
+  ],
+  "timeline": [
+    {
+      "timestamp": "0:03",
+      "event": "Overexposed Post-Kill",
+      "eventKey": "overexposed_post_kill",
+      "category": "positioning",
+      "rating": "bad",
+      "analysis": "The player pushes wide around the truck into a contested area, exposing themselves to multiple angles and getting shot from the left.",
+      "recommendation": "After winning a fight, move to hard cover before you search for the next engagement.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "0:07",
+      "event": "Overheat After Blood",
+      "eventKey": "overheat_after_blood",
+      "category": "decision",
+      "rating": "bad",
+      "analysis": "After securing a kill, the player immediately reloads in the open, allowing an enemy to easily trade them out.",
+      "recommendation": "After a kill, immediately break line of sight, reposition, or re-evaluate the next threat lane.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "0:18",
+      "event": "Untradeable Death",
+      "eventKey": "untradeable_death",
+      "category": "positioning",
+      "rating": "terrible",
+      "analysis": "The player pushes directly into the garage, peeking a known enemy position without cover or a clear trade window, resulting in an immediate death.",
+      "recommendation": "Play closer to cover or teammate trade paths so a follow-up death is harder to punish.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "0:51",
+      "event": "Lack of Cover Discipline",
+      "eventKey": "lack_of_cover_discipline",
+      "category": "positioning",
+      "rating": "bad",
+      "analysis": "The player pushes through the archway into an open area, getting caught by an enemy holding a wide angle from the side.",
+      "recommendation": "Anchor your gunfights to hard cover you can instantly fall back behind.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "1:16",
+      "event": "Clean Opening Pick",
+      "eventKey": "clean_opening_pick",
+      "category": "aim",
+      "rating": "excellent",
+      "analysis": "The player executes a clean entry onto the hardpoint, securing two quick kills with good aim and target acquisition.",
+      "recommendation": "After a clean opening kill, reset to cover before taking the next angle.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "2:03",
+      "event": "Overexposed Post-Kill",
+      "eventKey": "overexposed_post_kill",
+      "category": "positioning",
+      "rating": "bad",
+      "analysis": "The player peeks a wide angle on the terrace, exposing themselves to an enemy holding a tight angle, leading to a quick death.",
+      "recommendation": "After winning a fight, move to hard cover before you search for the next engagement.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "2:18",
+      "event": "Untradeable Death",
+      "eventKey": "untradeable_death",
+      "category": "decision",
+      "rating": "terrible",
+      "analysis": "The player pushes into the gallery, getting caught by an enemy holding a predictable angle from the doorway, resulting in an untradeable death.",
+      "recommendation": "Play closer to cover or teammate trade paths so a follow-up death is harder to punish.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "2:37",
+      "event": "Clean Opening Pick",
+      "eventKey": "clean_opening_pick",
+      "category": "aim",
+      "rating": "excellent",
+      "analysis": "The player holds a strong position on the terrace, securing multiple kills with precise aim and good recoil control.",
+      "recommendation": "After a clean opening kill, reset to cover before taking the next angle.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "3:17",
+      "event": "Clean Opening Pick",
+      "eventKey": "clean_opening_pick",
+      "category": "awareness",
+      "rating": "good",
+      "analysis": "The player demonstrates good awareness by wall-banging an enemy through the wall, securing a kill based on sound or intel.",
+      "recommendation": "After a clean opening kill, reset to cover before taking the next angle.",
+      "confidence": "medium",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "3:41",
+      "event": "Isolated Engagement",
+      "eventKey": "isolated_engagement",
+      "category": "teamplay",
+      "rating": "bad",
+      "analysis": "The player pushes garage alone into multiple enemies, getting overwhelmed and eliminated without trading.",
+      "recommendation": "Avoid isolated fights when there is no teammate pressure or trade path supporting the chall.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "4:10",
+      "event": "Aggressive Initial Push",
+      "eventKey": "aggressive_initial_push",
+      "category": "positioning",
+      "rating": "bad",
+      "analysis": "The player aggressively pushes the terrace, getting caught in the open by multiple enemies and quickly eliminated.",
+      "recommendation": "If you take an aggressive opener, make sure you have immediate cover or a planned escape route.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "4:45",
+      "event": "Clean Opening Pick",
+      "eventKey": "clean_opening_pick",
+      "category": "mechanical",
+      "rating": "excellent",
+      "analysis": "The player quickly swaps to their pistol to finish off an enemy after running out of primary ammo, demonstrating good mechanical skill.",
+      "recommendation": "After a clean opening kill, reset to cover before taking the next angle.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "5:15",
+      "event": "Untradeable Death",
+      "eventKey": "untradeable_death",
+      "category": "positioning",
+      "rating": "terrible",
+      "analysis": "The player peeks extremely wide around a corner into an enemy, offering no cover and getting instantly eliminated.",
+      "recommendation": "Play closer to cover or teammate trade paths so a follow-up death is harder to punish.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "5:29",
+      "event": "Clean Opening Pick",
+      "eventKey": "clean_opening_pick",
+      "category": "movement",
+      "rating": "good",
+      "analysis": "The player uses a jump shot to gain an advantage and secure a kill, showcasing effective movement mechanics.",
+      "recommendation": "After a clean opening kill, reset to cover before taking the next angle.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "5:53",
+      "event": "Overexposed Post-Kill",
+      "eventKey": "overexposed_post_kill",
+      "category": "positioning",
+      "rating": "bad",
+      "analysis": "The player pushes into the office, exposing themselves to an enemy holding a strong angle from the doorway, leading to a quick death.",
+      "recommendation": "After winning a fight, move to hard cover before you search for the next engagement.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "6:06",
+      "event": "Aggressive Initial Push",
+      "eventKey": "aggressive_initial_push",
+      "category": "objective",
+      "rating": "good",
+      "analysis": "The player aggressively pushes to contest the hardpoint, securing a kill and initiating the contest, which is crucial for objective play.",
+      "recommendation": "If you take an aggressive opener, make sure you have immediate cover or a planned escape route.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "6:15",
+      "event": "Untradeable Death",
+      "eventKey": "untradeable_death",
+      "category": "positioning",
+      "rating": "terrible",
+      "analysis": "The player peeks a wide angle on the terrace, getting caught by an enemy holding a strong headglitch, resulting in an untradeable death.",
+      "recommendation": "Play closer to cover or teammate trade paths so a follow-up death is harder to punish.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "7:08",
+      "event": "Aggressive Initial Push",
+      "eventKey": "aggressive_initial_push",
+      "category": "movement",
+      "rating": "bad",
+      "analysis": "The player pushes up the stairs aggressively into an enemy holding the high ground, getting caught in a disadvantageous position.",
+      "recommendation": "If you take an aggressive opener, make sure you have immediate cover or a planned escape route.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    },
+    {
+      "timestamp": "7:30",
+      "event": "Punishable Sequence",
+      "eventKey": "generic_negative",
+      "category": "objective",
+      "rating": "bad",
+      "analysis": "The player attempts to contest the hardpoint very late, getting caught in the open and eliminated, failing to secure the objective time.",
+      "recommendation": "Lower the risk of this sequence by using stronger cover and cleaner post-contact discipline.",
+      "confidence": "high",
+      "perspective": "player_pov"
+    }
+  ],
+  "recurringPatterns": [
+    {
+      "pattern": "Low-percentage engagement choices",
+      "frequency": "frequent",
+      "impact": "high",
+      "description": "Multiple moments show forced fights or re-challenges without enough information."
+    },
+    {
+      "pattern": "Unsafe positioning under pressure",
+      "frequency": "constant",
+      "impact": "high",
+      "description": "Repeated exposure in open lanes or weak cover usage appears across several moments."
+    }
+  ],
+  "mechanicalReview": {
+    "aimQuality": 7.7,
+    "centering": 7.7,
+    "recoilControl": 7.4,
+    "tracking": 7.5,
+    "flickAccuracy": 7.4,
+    "crosshairPlacement": 7.7,
+    "movementQuality": 6.4,
+    "slideJumpUsage": 6.4,
+    "notes": [
+      "Overall aim is solid, capable of securing quick eliminations.",
+      "Recoil control is generally good, allowing for consistent shots at range.",
+      "Target acquisition is quick, especially in close-quarters engagements.",
+      "Could benefit from more consistent headshot aiming to reduce time-to-kill.",
+      "Movement is often too aggressive, leading to overexposure in open areas.",
+      "More disciplined use of cover and power sliding would improve survivability.",
+      "Reloading in the open frequently negates good movement into advantageous positions.",
+      "Good use of jump shots in some engagements to throw off enemy aim."
+    ]
+  },
+  "decisionMakingReview": {
+    "engagementSelection": 4.4,
+    "rotationTiming": 4.6,
+    "objectivePlay": 4.3,
+    "overChallenges": [
+      "The player frequently 'overheats' after a kill, pushing too aggressively or reloading in the open."
+    ],
+    "egoChalls": [],
+    "badPeeks": [],
+    "notes": [
+      "The player frequently 'overheats' after a kill, pushing too aggressively or reloading in the open.",
+      "Decision-making regarding when to push and when to hold needs refinement.",
+      "Better intel gathering and map awareness would inform safer pushes and rotations.",
+      "More patience and coordination with teammates would lead to more successful engagements."
+    ]
+  },
+  "positioningReview": {
+    "mapAwareness": 4.1,
+    "useOfCover": 4.1,
+    "spawnAwareness": 4.3,
+    "powerPositions": 4.1,
+    "routeChoices": 4.2,
+    "dangerZoneAwareness": 4.1,
+    "notes": [
+      "Repeatedly takes untradeable peeks into strong enemy angles.",
+      "Often pushes into contested areas without sufficient cover or team support.",
+      "Needs to prioritize finding hard cover immediately after securing a kill.",
+      "Better anticipation of enemy spawns and rotations would improve defensive positioning."
+    ]
+  },
+  "coachingSummary": "Your profile in this VOD: Aim 7.7/10, Positioning 4.1/10, Decision-Making 4.4/10.\nWhat you are doing well: you can win clean gunfights; clean opening pick.\nWhat is costing you SR right now: overheat after blood; positioning under pressure; fight decisions after contact.\nStop doing this immediately: overheat after blood.\nDo this instead every fight: After winning a fight, move to hard cover before you search for the next engagement.\nNext 5 ranked maps plan:\n1) Overheat After Blood: Cue word: KCC. Repeat in 10 ranked fights: no second peek until cover touch. Target: Cut this habit by 50% over the next 5 ranked maps.\n2) Untradeable Wide Exposure: In your next 3 maps, call out your cover before each chall: left/right hard cover only. Target: Cut this habit by 50% over the next 5 ranked maps.\n3) Inconsistent Conversion Discipline: 15-minute private match block: pre-aim lanes, no sprint into LOS, track conversion percentage. Target: Cut this habit by 30% over the next 5 ranked maps.\nSuccess condition: fewer isolated deaths, fewer panic re-challs, and better life value after each first blood.",
+  "topThreePriorities": [
+    "After winning a fight, move to hard cover before you search for the next engagement.",
+    "After a kill, immediately break line of sight, reposition, or re-evaluate the next threat lane.",
+    "Play closer to cover or teammate trade paths so a follow-up death is harder to punish."
+  ],
+  "coachVerdict": {
+    "verdict": "Gunny flashes are there, but sequence discipline is leaking too much SR.",
+    "bottleneck": "Overheat After Blood",
+    "confidence": "medium",
+    "basedOn": "19 tagged moments across complete playable match (through 7:30).",
+    "scope": "medium_segment"
+  },
+  "srLeakingHabits": [
+    {
+      "name": "Overheat After Blood",
+      "trigger": "After first contact or a pick, immediate re-chall without cover reset.",
+      "replacement": "Kill -> Cover -> Clear next threat lane before re-peeking.",
+      "drill": "Cue word: KCC. Repeat in 10 ranked fights: no second peek until cover touch.",
+      "impact": "high",
+      "punishment": "iridescent",
+      "confidence": "high",
+      "evidence": [
+        "0:03 - Overexposed Post-Kill",
+        "0:07 - Overheat After Blood"
+      ]
+    },
+    {
+      "name": "Untradeable Wide Exposure",
+      "trigger": "Taking gunfights while open to multiple angles with weak teammate trade access.",
+      "replacement": "Slice one angle at a time and anchor to cover before committing damage.",
+      "drill": "In your next 3 maps, call out your cover before each chall: left/right hard cover only.",
+      "impact": "high",
+      "punishment": "top250",
+      "confidence": "medium",
+      "evidence": [
+        "0:03 - Overexposed Post-Kill",
+        "0:18 - Untradeable Death"
+      ]
+    },
+    {
+      "name": "Inconsistent Conversion Discipline",
+      "trigger": "First bullets land, but follow-up movement/finishing sequence is unstable.",
+      "replacement": "Prioritize first bullet accuracy plus damage conversion over flashy movement.",
+      "drill": "15-minute private match block: pre-aim lanes, no sprint into LOS, track conversion percentage.",
+      "impact": "medium",
+      "punishment": "crimson",
+      "confidence": "medium",
+      "evidence": [
+        "7:08 - Aggressive Initial Push"
+      ]
+    }
+  ],
+  "proAlternatives": [
+    {
+      "situation": "0:03 - Overexposed Post-Kill",
+      "safest": "After winning a fight, move to hard cover before you search for the next engagement.",
+      "aggressive": "Re-chall only with pre-aim + cover touch + teammate pressure active.",
+      "soloQueue": "Take the 70/30 version of this fight. If no trade path, disengage and hold info."
+    },
+    {
+      "situation": "0:07 - Overheat After Blood",
+      "safest": "After a kill, immediately break line of sight, reposition, or re-evaluate the next threat lane.",
+      "aggressive": "Re-chall only with pre-aim + cover touch + teammate pressure active.",
+      "soloQueue": "Take the 70/30 version of this fight. If no trade path, disengage and hold info."
+    },
+    {
+      "situation": "0:18 - Untradeable Death",
+      "safest": "Play closer to cover or teammate trade paths so a follow-up death is harder to punish.",
+      "aggressive": "Re-chall only with pre-aim + cover touch + teammate pressure active.",
+      "soloQueue": "Take the 70/30 version of this fight. If no trade path, disengage and hold info."
+    }
+  ],
+  "scorecards": [
+    {
+      "key": "overall",
+      "label": "Overall Competitive Read",
+      "score": 5.4,
+      "observations": 19,
+      "confidence": "medium",
+      "scope": "medium_segment"
+    },
+    {
+      "key": "aim_quality",
+      "label": "Aim Quality",
+      "score": 7.7,
+      "observations": 3,
+      "confidence": "medium",
+      "scope": "medium_segment"
+    },
+    {
+      "key": "movement_quality",
+      "label": "Movement Quality",
+      "score": 6.4,
+      "observations": 3,
+      "confidence": "medium",
+      "scope": "medium_segment"
+    },
+    {
+      "key": "engagement_selection",
+      "label": "Engagement Selection",
+      "score": 4.4,
+      "observations": 4,
+      "confidence": "medium",
+      "scope": "medium_segment"
+    },
+    {
+      "key": "rotation_timing",
+      "label": "Rotation Timing",
+      "score": null,
+      "observations": 2,
+      "confidence": "insufficient_sample",
+      "scope": "medium_segment",
+      "reason": "Requires at least 4 relevant observations for a defensible score."
+    },
+    {
+      "key": "objective_play",
+      "label": "Objective Play",
+      "score": null,
+      "observations": 3,
+      "confidence": "insufficient_sample",
+      "scope": "medium_segment",
+      "reason": "Requires at least 4 relevant observations for a defensible score."
+    },
+    {
+      "key": "map_awareness",
+      "label": "Map Awareness",
+      "score": 4.1,
+      "observations": 9,
+      "confidence": "medium",
+      "scope": "medium_segment"
+    },
+    {
+      "key": "spawn_awareness",
+      "label": "Spawn Awareness",
+      "score": 4.3,
+      "observations": 10,
+      "confidence": "medium",
+      "scope": "medium_segment"
+    }
+  ],
+  "trainingPrescription": [
+    {
+      "title": "1. Overheat After Blood",
+      "cue": "Kill-Cover-Clear",
+      "prescription": "Cue word: KCC. Repeat in 10 ranked fights: no second peek until cover touch.",
+      "target": "Cut this habit by 50% over the next 5 ranked maps."
+    },
+    {
+      "title": "2. Untradeable Wide Exposure",
+      "cue": "Cover before Chall",
+      "prescription": "In your next 3 maps, call out your cover before each chall: left/right hard cover only.",
+      "target": "Cut this habit by 50% over the next 5 ranked maps."
+    },
+    {
+      "title": "3. Inconsistent Conversion Discipline",
+      "cue": "Stable First Bullets",
+      "prescription": "15-minute private match block: pre-aim lanes, no sprint into LOS, track conversion percentage.",
+      "target": "Cut this habit by 30% over the next 5 ranked maps."
+    }
+  ],
+  "evidenceAppendix": {
+    "nonPlayableStateEvidence": [],
+    "observedFacts": [
+      "0:03: Overexposed Post-Kill (bad)",
+      "0:07: Overheat After Blood (bad)",
+      "0:18: Untradeable Death (terrible)",
+      "0:51: Lack of Cover Discipline (bad)",
+      "1:16: Clean Opening Pick (excellent)",
+      "2:03: Overexposed Post-Kill (bad)",
+      "2:18: Untradeable Death (terrible)",
+      "2:37: Clean Opening Pick (excellent)"
+    ],
+    "inferences": [
+      "Low-percentage engagement choices: Multiple moments show forced fights or re-challenges without enough information.",
+      "Unsafe positioning under pressure: Repeated exposure in open lanes or weak cover usage appears across several moments.",
+      "Overheat After Blood inferred from repeated punish windows.",
+      "Untradeable Wide Exposure inferred from repeated punish windows.",
+      "Inconsistent Conversion Discipline inferred from repeated punish windows."
+    ],
+    "limitations": [
+      "Full recording audited: the Hacienda match is playable through 7:30; the remaining recording is best-play, scoreboard, lobby/loading, and the next map pre-match countdown, so no later mechanics were graded.",
+      "Objective-layer sample is limited; rotation and spawn scores are confidence-gated."
+    ],
+    "sampleSize": {
+      "timelineMoments": 19,
+      "scope": "medium_segment",
+      "maxTimestamp": "7:30",
+      "categoryObservations": {
+        "aim": 2,
+        "movement": 2,
+        "positioning": 8,
+        "decision": 2,
+        "awareness": 1,
+        "mechanical": 1,
+        "objective": 2,
+        "teamplay": 1
+      }
+    }
+  },
+  "coverageNote": "Full recording audited: the Hacienda match is playable through 7:30; the remaining recording is best-play, scoreboard, lobby/loading, and the next map pre-match countdown, so no later mechanics were graded.",
+  "coverageLabel": "complete playable match"
+}

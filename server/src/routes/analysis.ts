@@ -66,10 +66,10 @@ async function hashFile(filePath: string): Promise<string> {
 
 async function findReusableJobByVideoHash(videoHash: string): Promise<Job | undefined> {
   const directMatch = findCompletedJobByVideoHash(videoHash);
-  if (directMatch?.report) return directMatch;
+  if (isReusableReport(directMatch)) return directMatch;
 
   const completedJobs = getAllJobs()
-    .filter((job) => job.status === "complete" && !!job.report)
+    .filter((job) => isReusableReport(job))
     .sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime());
 
   for (const job of completedJobs) {
@@ -88,6 +88,15 @@ async function findReusableJobByVideoHash(videoHash: string): Promise<Job | unde
   }
 
   return undefined;
+}
+
+function isReusableReport(job: Job | undefined): job is Job & { report: NonNullable<Job["report"]> } {
+  return !!(
+    job?.status === "complete" &&
+    job.report &&
+    Array.isArray(job.report.timeline) &&
+    job.report.timeline.length > 0
+  );
 }
 
 function getMimeType(filePath: string): string {

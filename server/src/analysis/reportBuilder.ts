@@ -28,7 +28,10 @@ const NEGATIVE_MARKERS = [
   "late",
   "slow",
   "panic",
-  "over",
+  "overextend",
+  "overheat",
+  "over-chall",
+  "overexpos",
   "ego",
   "wrong",
   "hesitat",
@@ -50,7 +53,6 @@ const POSITIVE_MARKERS = [
   "smart",
   "consistent",
   "effective",
-  "trade",
   "advantage",
 ];
 
@@ -142,7 +144,7 @@ function sentimentDelta(notes: string[]): number {
     if (text.includes(token)) negatives += 1;
   }
 
-  return Math.max(-1.5, Math.min(1.5, (positives - negatives) * 0.25));
+  return Math.max(-0.8, Math.min(0.8, (positives - negatives) * 0.15));
 }
 
 function dedupeStrings(input: string[]): string[] {
@@ -176,14 +178,13 @@ function categoryAverage(
   const scores = moments
     .filter((m) => categories.includes(m.category as Category))
     .map((m) => RATING_TO_SCORE[m.rating] ?? 6);
-  return avg(scores, fallback);
-}
+  if (scores.length === 0) return fallback;
 
-function badRatio(moments: CriticalMoment[], categories: Category[]): number {
-  const filtered = moments.filter((m) => categories.includes(m.category as Category));
-  if (filtered.length === 0) return 0;
-  const badCount = filtered.filter((m) => BAD_RATINGS.has(m.rating)).length;
-  return badCount / filtered.length;
+  // Sparse, hand-picked moments are selection-biased. Pull category scores
+  // toward the VOD-wide baseline until there is enough evidence to stand alone.
+  const priorWeight = 3;
+  const weightedTotal = scores.reduce((sum, score) => sum + score, 0) + fallback * priorWeight;
+  return weightedTotal / (scores.length + priorWeight);
 }
 
 function buildInsights(
@@ -462,6 +463,10 @@ export function buildReportFromVideoAnalysis(analysis: VideoAnalysisResult): Coa
     analysis.rawAnalysis || "",
   ];
 
+  if (timeline.length === 0) {
+    throw new Error("Cannot build a coaching report without timestamped gameplay evidence.");
+  }
+
   const { scope, maxTimestamp } = coverageScopeFromTimeline(timeline);
   const counts = categoryCounts(timeline);
   const hasTimeline = timeline.length > 0;
@@ -508,11 +513,6 @@ export function buildReportFromVideoAnalysis(analysis: VideoAnalysisResult): Coa
     ? categoryAverage(timeline, ["decision", "objective", "teamplay"], globalBase)
     : decisionFallback;
 
-  const aimBad = badRatio(timeline, ["aim", "mechanical"]);
-  const movementBad = badRatio(timeline, ["movement", "mechanical"]);
-  const positioningBad = badRatio(timeline, ["positioning", "awareness"]);
-  const decisionBad = badRatio(timeline, ["decision", "objective", "teamplay"]);
-
   const aimObservations = counts.aim + counts.mechanical;
   const movementObservations = counts.movement + counts.mechanical;
   const positioningObservations = counts.positioning + counts.awareness;
@@ -524,14 +524,14 @@ export function buildReportFromVideoAnalysis(analysis: VideoAnalysisResult): Coa
   const decisionNotesDelta = stableSentimentDelta(analysis.decisionNotes || [], decisionObservations, scope);
 
   const mechanicalReview = {
-    aimQuality: clampScore(aimBase + aimNotesDelta - aimBad * 1.4),
-    centering: clampScore(aimBase + aimNotesDelta * 0.6 - aimBad * 1.2 + 0.2),
-    recoilControl: clampScore(aimBase + aimNotesDelta * 0.5 - aimBad * 1.1 - 0.1),
-    tracking: clampScore(aimBase + aimNotesDelta * 0.4 - aimBad * 1.0 + 0.1),
-    flickAccuracy: clampScore(aimBase + aimNotesDelta * 0.3 - aimBad * 1.0),
-    crosshairPlacement: clampScore(aimBase + aimNotesDelta * 0.7 - aimBad * 1.3 + 0.15),
-    movementQuality: clampScore(movementBase + movementNotesDelta - movementBad * 1.4),
-    slideJumpUsage: clampScore(movementBase + movementNotesDelta * 0.8 - movementBad * 1.2 + 0.1),
+    aimQuality: clampScore(aimBase + aimNotesDelta),
+    centering: clampScore(aimBase + aimNotesDelta * 0.6 + 0.2),
+    recoilControl: clampScore(aimBase + aimNotesDelta * 0.5 - 0.1),
+    tracking: clampScore(aimBase + aimNotesDelta * 0.4 + 0.1),
+    flickAccuracy: clampScore(aimBase + aimNotesDelta * 0.3),
+    crosshairPlacement: clampScore(aimBase + aimNotesDelta * 0.7 + 0.15),
+    movementQuality: clampScore(movementBase + movementNotesDelta),
+    slideJumpUsage: clampScore(movementBase + movementNotesDelta * 0.8 + 0.1),
     notes: dedupeStrings([...(analysis.aimNotes || []), ...(analysis.movementNotes || [])]).slice(0, 10),
   };
 
@@ -543,12 +543,11 @@ export function buildReportFromVideoAnalysis(analysis: VideoAnalysisResult): Coa
   ];
 
   const decisionMakingReview = {
-    engagementSelection: clampScore(decisionBase + decisionNotesDelta - decisionBad * 1.5),
-    rotationTiming: clampScore(decisionBase + decisionNotesDelta * 0.7 - decisionBad * 1.2 + 0.1),
+    engagementSelection: clampScore(decisionBase + decisionNotesDelta),
+    rotationTiming: clampScore(decisionBase + decisionNotesDelta * 0.7 + 0.1),
     objectivePlay: clampScore(
       categoryAverage(timeline, ["objective", "decision", "teamplay"], decisionBase) +
-      decisionNotesDelta * 0.6 -
-      badRatio(timeline, ["objective", "teamplay"]) * 1.3
+      decisionNotesDelta * 0.6
     ),
     overChallenges: pickByKeywords(decisionCorpus, ["over", "re-chall", "rechallenge", "repeat"], 5),
     egoChalls: pickByKeywords(decisionCorpus, ["ego", "unnecessary", "forced fight"], 5),
@@ -557,12 +556,12 @@ export function buildReportFromVideoAnalysis(analysis: VideoAnalysisResult): Coa
   };
 
   const positioningReview = {
-    mapAwareness: clampScore(positioningBase + positioningNotesDelta - positioningBad * 1.4),
-    useOfCover: clampScore(positioningBase + positioningNotesDelta * 0.8 - positioningBad * 1.3),
-    spawnAwareness: clampScore(positioningBase + positioningNotesDelta * 0.6 - positioningBad * 1.1 + 0.2),
-    powerPositions: clampScore(positioningBase + positioningNotesDelta * 0.7 - positioningBad * 1.1),
-    routeChoices: clampScore(positioningBase + positioningNotesDelta * 0.6 - positioningBad * 1.0 + 0.1),
-    dangerZoneAwareness: clampScore(positioningBase + positioningNotesDelta * 0.7 - positioningBad * 1.2),
+    mapAwareness: clampScore(positioningBase + positioningNotesDelta),
+    useOfCover: clampScore(positioningBase + positioningNotesDelta * 0.8),
+    spawnAwareness: clampScore(positioningBase + positioningNotesDelta * 0.6 + 0.2),
+    powerPositions: clampScore(positioningBase + positioningNotesDelta * 0.7),
+    routeChoices: clampScore(positioningBase + positioningNotesDelta * 0.6 + 0.1),
+    dangerZoneAwareness: clampScore(positioningBase + positioningNotesDelta * 0.7),
     notes: dedupeStrings(analysis.positioningNotes || []).slice(0, 10),
   };
 
@@ -752,7 +751,7 @@ export function buildReportFromVideoAnalysis(analysis: VideoAnalysisResult): Coa
       : "What you are doing well: you still show enough mechanics to convert fights when setup is clean.",
     `What is costing you SR right now: ${weakestAreas.join("; ") || primaryIssue.toLowerCase()}.`,
     `Stop doing this immediately: ${stopNow}.`,
-    `Do this instead every fight: ${startNow}.`,
+    `Do this instead every fight: ${startNow.replace(/[.!?]+$/, "")}.`,
     "Next 5 ranked maps plan:",
     ...rankedPlan,
     "Success condition: fewer isolated deaths, fewer panic re-challs, and better life value after each first blood.",
